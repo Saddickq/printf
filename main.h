@@ -15,6 +15,7 @@ struct convert
 	char *sign;
 	int (*f)(va_list);
 }
+typedef struct convert conver_t;
 
 /*********functions**********/
 int _printf(const char *format, ...);
