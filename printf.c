@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _printf - Printf function
@@ -26,7 +27,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[h + 1] == 's')
 		{
-			r_val = put_s(va_arg(args, char *));
+			r_val = puts(va_arg(args, char *));
 			h++;
 			printed_value += (r_val - 1);
 		}
