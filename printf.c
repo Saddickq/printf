@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+#include <string.h>
 
 /**
  * _printf - Printf function
@@ -8,35 +8,44 @@
  */
 int _printf(const char *format, ...)
 {
-	unsigned int h = 0, printed_value = 0;
+	int i;
+	int count = 0;
+
 	va_list args;
-	int r_val;
 
 	va_start(args, format);
 
-	for (h = 0; format[h] != '\0' ; h++)
+	for (i = 0; format[i]; i++)
 	{
-		if (format[h] != '%')
+		if (format[i] == '%')
 		{
-			_putchar(format[h]);
+			if (format[i + 1] == 'c')
+			{
+				char alp = va_arg(args, int);
+				_putchar(alp);
+				count++;
+			}
+			else if (format[i + 1] == 's')
+			{
+				char *str = va_arg(args, char*);
+				int j = 0;
+
+				while (str[j])
+				{
+					_putchar(str[j]);
+					j++;
+					count++;
+				}
+			}
+			i++;
 		}
-		else if (format[h + 1] == 'c')
+		else
 		{
-			_putchar(va_arg(args, int));
-			h++;
+			_putchar(format[i]);
+			count++;
 		}
-		else if (format[h + 1] == 's')
-		{
-			r_val = puts(va_arg(args, char *));
-			h++;
-			printed_value += (r_val - 1);
-		}
-		else if (format[h + 1] == '%')
-		{
-			_putchar('%');
-			h++;
-		}
-		printed_value += 1;
 	}
-	return (printed_value);
+	va_end(args);
+
+	return (count);
 }
