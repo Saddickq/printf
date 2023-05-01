@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 
 /**
  * _printf - Printf function
@@ -22,6 +21,7 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == 'c')
 			{
 				char alp = va_arg(args, int);
+
 				_putchar(alp);
 				count++;
 			}
@@ -30,12 +30,28 @@ int _printf(const char *format, ...)
 				char *str = va_arg(args, char*);
 				int j = 0;
 
-				while (str[j])
+				if (str == 0)
 				{
-					_putchar(str[j]);
-					j++;
-					count++;
+					_putstr("(null)");
+					count += 6;
 				}
+				else
+				{
+					while (str[j])
+					{
+						_putchar(str[j]);
+						j++;
+						count++;
+					}
+				}
+			}
+			else if (format[i + 1] == '%')
+			{
+				_putchar('%');
+			}
+			else
+			{
+				_putchar(format[i + 1]);
 			}
 			i++;
 		}
