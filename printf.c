@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 				count++;
 			}
 			else if (format[i + 1] == 's')
-			{	
+			{
 				print_string(va_arg(args, char*));
 			}
 			else
