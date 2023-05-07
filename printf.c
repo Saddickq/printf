@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printf - Printf function
  * @format: format.
@@ -20,38 +19,22 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == 'c')
 			{
-				char alp = va_arg(args, int);
-
-				_putchar(alp);
+				_putchar(va_arg(args, int));
 				count++;
-			}
-			else if (format[i + 1] == 's')
-			{
-				char *str = va_arg(args, char*);
-				int j = 0;
-
-				if (str == 0)
-				{
-					_putstr("(null)");
-					count += 6;
-				}
-				else
-				{
-					while (str[j])
-					{
-						_putchar(str[j]);
-						j++;
-						count++;
-					}
-				}
 			}
 			else if (format[i + 1] == '%')
 			{
 				_putchar('%');
+				count++;
+			}
+			else if (format[i + 1] == 's')
+			{	
+				print_string(va_arg(args, char*));
 			}
 			else
 			{
 				_putchar(format[i + 1]);
+				count++;
 			}
 			i++;
 		}
@@ -62,6 +45,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(args);
-
 	return (count);
 }

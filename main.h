@@ -7,6 +7,7 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int _putstr(char *str);
+void _putstr(char *str);
+int print_string(char *str);
 
 #endif

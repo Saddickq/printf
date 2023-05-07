@@ -10,9 +10,11 @@ int main(void)
 	
 	char name[] = "Saddickq";
 
+	_printf("My char is %c\n", a);
 	_printf("My name is %s\n", name);
 	_printf("complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
 	_printf("%%\n");
+	_printf(NULL);
 
 	_printf("%s%c%c%c%s%%%s\n", "Loading ", '.', '.', '.', "99", " Please wait");
 

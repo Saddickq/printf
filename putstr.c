@@ -4,7 +4,7 @@
  * @str : string pointer
  * Return: int
  */
-int _putstr(char *str)
+void _putstr(char *str)
 {
 	int i = 0;
 	
@@ -13,5 +13,4 @@ int _putstr(char *str)
 		_putchar(str[i]);
 		i++;
 	}
-	return (0);
 }
