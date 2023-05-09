@@ -4,23 +4,26 @@
 int main(void)
 {
 	char l = 'V';
-	char a = 'A';
-	char arr[] = "This is testing ";
-
 	
+	int age = 4;
+	int year = 2035;
+	int neg = -21;
+	int sub = -3;
+
 	char name[] = "Saddickq";
 
-	_printf("My char is %c\n", a);
-	_printf("My name is %s\n", name);
 	_printf("complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
 	_printf("%%\n");
-	_printf(NULL);
-
+	_printf("%s", "This sentence is retrieved from va_args!\n");
 	_printf("%s%c%c%c%s%%%s\n", "Loading ", '.', '.', '.', "99", " Please wait");
-
-	_printf("%MK234\n");
-	_printf("%!\n");
 	
-	_printf("%c for %s\n%c for %s\n", a, "Apple", l, "vulture");
+	_printf("%s\n%c for %s\n", "Apple", l, "vulture");
+	_printf("This is testing\n");
+	_printf("%");
+	_printf("============================================\n");
+	_printf("My age is %d\n", age);
+	_printf("%d\n", sub);
+	_printf("In %d this will be weird and crazy\n", year);
+	_printf("%s is %d\n", name, neg);
 	return (0);
 }
