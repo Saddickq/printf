@@ -19,8 +19,10 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == 'c')
+			{
 				_putchar(va_arg(args, int));
 				count++;
+			}
 			else if (format[i + 1] == 'd' || format[i + 1] == 'i')
 				count += print_number(va_arg(args, int));
 			else if (format[i + 1] == 's')
