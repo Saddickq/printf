@@ -25,5 +25,10 @@ int main(void)
 	_printf("%d\n", sub);
 	_printf("In %d this will be weird and crazy\n", year);
 	_printf("%s is %d\n", name, neg);
+	_printf("my phone is %i\n", 100);
+	_printf("tamale is full of %i\n", -46);
+	_printf("%k\n");
+	_printf(NULL);
+
 	return (0);
 }
