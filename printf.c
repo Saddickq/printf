@@ -40,8 +40,10 @@ int _printf(const char *format, ...)
 			i++;
 		}
 		else
+		{
 			_putchar(format[i]);
 			count++;
+		}
 	}
 	va_end(args);
 	return (count);
